@@ -13,6 +13,6 @@ git clone git://github.com/altercation/vim-colors-solarized.git ~/.vim/pathogen/
 #oh my zsh setup
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 
-cp .vimrc .zshrc .screenrc ..
+cp .vimrc .zshrc .screenrc ~/
 
 echo 'Setup done.'
