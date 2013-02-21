@@ -37,7 +37,7 @@ plugins=(git zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
-
+DISPLAY=:0
 EDITOR=vim
 
 bindkey -v

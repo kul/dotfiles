@@ -12,7 +12,10 @@ git clone git://github.com/altercation/vim-colors-solarized.git ~/.vim/pathogen/
 
 #oh my zsh setup
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+git clone git://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 
-cp .vimrc .zshrc .screenrc ~/
+ln -s `pwd`/.vimrc ~/.vimrc 
+ln -s `pwd`/.zshrc ~/.zshrc 
+ln -s `pwd`/.screenrc ~/.screenrc 
 
 echo 'Setup done.'

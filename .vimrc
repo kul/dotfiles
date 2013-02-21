@@ -13,6 +13,7 @@ execute pathogen#infect('pathogen/{}')
 syntax on
 filetype plugin indent on
 set tabstop=4 shiftwidth=4 expandtab softtabstop=4
+set backspace=indent,eol,start
 set number
 set pastetoggle=<F2>
 nnoremap <F2> :set nonumber!<CR>
