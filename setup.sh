@@ -7,8 +7,10 @@ curl -Sso ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen
 #vundle setup
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 
-#vim colorscheme solarized setup
+#vim pathogen plugins 
 git clone git://github.com/altercation/vim-colors-solarized.git ~/.vim/pathogen/vim-colors-solarized
+git clone https://github.com/kien/ctrlp.vim.git ~/.vim/pathogen/ctrlp.vim
+git clone https://github.com/scrooloose/nerdtree.git ~/.vim/pathogen/nerdtree
 
 #oh my zsh setup
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
