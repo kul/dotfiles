@@ -19,5 +19,6 @@ git clone git://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/cu
 ln -s `pwd`/.vimrc ~/.vimrc 
 ln -s `pwd`/.zshrc ~/.zshrc 
 ln -s `pwd`/.screenrc ~/.screenrc 
+ln -s `pwd`/.ctags ~/.ctags 
 
 echo 'Setup done.'

@@ -16,7 +16,7 @@ filetype plugin indent on
 set tabstop=4 shiftwidth=4 expandtab softtabstop=4
 set backspace=indent,eol,start
 set number
-set tags=./tags;../*/tags
+set tags=./tags;../*/tags;/
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 set pastetoggle=<F2>
@@ -26,7 +26,7 @@ ino jj <esc>
 cno jj <c-c>
 nnoremap <C-n> :bn<CR>
 nnoremap <C-x> :bd<CR>
-map <C-j> :NERDTreeToggle<CR>
+map <C-i> :NERDTreeToggle<CR>
 cmap w!! w !sudo tee % >/dev/null
 
 set t_Co=16
