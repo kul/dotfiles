@@ -16,6 +16,7 @@ filetype plugin indent on
 set tabstop=4 shiftwidth=4 expandtab softtabstop=4
 set backspace=indent,eol,start
 set number
+set hidden
 set tags=./tags;../*/tags;/
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
