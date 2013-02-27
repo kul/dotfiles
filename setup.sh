@@ -16,11 +16,21 @@ git clone https://github.com/scrooloose/nerdtree.git ~/.vim/pathogen/nerdtree
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 git clone git://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 
-ln -s `pwd`/.vimrc ~/.vimrc 
-ln -s `pwd`/.zshrc ~/.zshrc 
-ln -s `pwd`/.screenrc ~/.screenrc 
-ln -s `pwd`/.ctags ~/.ctags 
-ln -s `pwd`/.minttyrc ~/.minttyrc 
-cp .envrc ~/.envrc 
+backup_date=$(date +"%m-%d-%Y_%T")
+
+backup_dotfiles() {
+    while [ $# -ne 0 ]; do
+        cp ~/$1 ~/$1_bkp_$backup_date
+        rm ~/$1
+        ln -s `pwd`/$1 ~/$1 
+        shift
+    done
+}
+
+backup_dotfiles .vimrc .zshrc .screenrc .ctags .minttyrc
+
+if [ ! -e ~/.envrc ]; then
+    cp .envrc ~/.envrc; 
+fi
 
 echo 'Setup done.'

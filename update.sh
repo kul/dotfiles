@@ -6,6 +6,8 @@ git stash
 # update yourself
 git pull
 
+curl -Sso ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+
 update_git_repos() {
     # updates children directories inside $1
     wd=`pwd`
@@ -26,8 +28,6 @@ update_git_repos() {
 echo 'Updating pathogen repos..'
 update_git_repos ~/.vim/pathogen
 update_git_repos ~/.vim/bundle
-
-echo `pwd`
 
 echo 'Please merge your stashed changes if any.'
 
