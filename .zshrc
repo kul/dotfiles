@@ -45,4 +45,5 @@ EDITOR=vim
 bindkey -v
 bindkey -M viins 'jj' vi-cmd-mode
 bindkey '^P' history-search-backward
+bindkey '^N' history-search-forward
 

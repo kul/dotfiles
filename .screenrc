@@ -1,2 +1,9 @@
 shell /usr/bin/zsh
+startup_message off
+altscreen on
+hardstatus off
+hardstatus alwayslastline "%{b kw}%H %{r}%1` %{w}| %{g}%c, %{y}%d %M %{w}| %{-b kw}%u %-Lw%{= rW}%50> %n%f %t %{-}%+Lw%<"
 
+# bindings
+bindkey "^[[1;5I" next
+bindkey "^[[1;6I" prev

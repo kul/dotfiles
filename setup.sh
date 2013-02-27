@@ -20,6 +20,7 @@ ln -s `pwd`/.vimrc ~/.vimrc
 ln -s `pwd`/.zshrc ~/.zshrc 
 ln -s `pwd`/.screenrc ~/.screenrc 
 ln -s `pwd`/.ctags ~/.ctags 
+ln -s `pwd`/.minttyrc ~/.minttyrc 
 cp .envrc ~/.envrc 
 
 echo 'Setup done.'
