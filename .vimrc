@@ -8,6 +8,7 @@ Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'derekwyatt/vim-scala'
+Bundle 'tpope/vim-markdown'
 
 execute pathogen#infect('pathogen/{}')
 
@@ -19,6 +20,10 @@ set number
 set hidden
 set tags=./tags;../*/tags;/
 set runtimepath^=~/.vim/bundle/ctrlp.vim
+set foldmethod=indent
+set foldlevel=99
+nnoremap <space> za
+vnoremap <space> zf
 
 set pastetoggle=<F2>
 nnoremap <F2> :set nonumber!<CR>
