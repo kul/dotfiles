@@ -8,7 +8,10 @@ Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'derekwyatt/vim-scala'
+Bundle "daylerees/colour-schemes", { "rtp": "vim-themes/" }
 
+let g:pathogen_disabled = []
+"call add(g:pathogen_disabled, 'vinsime')
 execute pathogen#infect('pathogen/{}')
 
 syntax on
@@ -35,3 +38,6 @@ set background=dark
 colorscheme solarized
 
 let mapleader=','
+
+" plugins configurations
+let g:jedi#popup_on_dot=0

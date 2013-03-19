@@ -39,9 +39,6 @@ source $ZSH/oh-my-zsh.sh
 #manage environment from a seperate file
 source ~/.envrc
 
-DISPLAY=:0
-EDITOR=vim
-
 bindkey -v
 bindkey -M viins 'jj' vi-cmd-mode
 bindkey '^P' history-search-backward
