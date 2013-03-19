@@ -9,6 +9,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'derekwyatt/vim-scala'
 Bundle "daylerees/colour-schemes", { "rtp": "vim-themes/" }
+Bundle 'tpope/vim-markdown'
 
 let g:pathogen_disabled = []
 "call add(g:pathogen_disabled, 'vinsime')
@@ -22,6 +23,10 @@ set number
 set hidden
 set tags=./tags;../*/tags;/
 set runtimepath^=~/.vim/bundle/ctrlp.vim
+set foldmethod=indent
+set foldlevel=99
+nnoremap <space> za
+vnoremap <space> zf
 
 set pastetoggle=<F2>
 nnoremap <F2> :set nonumber!<CR>
