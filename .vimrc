@@ -12,11 +12,12 @@ Bundle "daylerees/colour-schemes", { "rtp": "vim-themes/" }
 Bundle 'tpope/vim-markdown'
 
 let g:pathogen_disabled = []
-"call add(g:pathogen_disabled, 'vinsime')
+" call add(g:pathogen_disabled, 'vinsime')
 execute pathogen#infect('pathogen/{}')
 
 syntax on
 filetype plugin indent on
+autocmd FileType scala setl tabstop=2 shiftwidth=2 expandtab softtabstop=2
 set tabstop=4 shiftwidth=4 expandtab softtabstop=4
 set backspace=indent,eol,start
 set number
@@ -46,3 +47,9 @@ let mapleader=','
 
 " plugins configurations
 let g:jedi#popup_on_dot=0
+let g:jedi#use_tabs_not_buffers = 0
+
+autocmd FileType r vmap <Space> <Plug>RDSendSelection
+autocmd FileType r nmap <Space> <Plug>RDSendLine
+let vimrplugin_notmuxconf = 1
+let vimrplugin_tmux = 0
