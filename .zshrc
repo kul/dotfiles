@@ -44,3 +44,9 @@ bindkey -M viins 'jj' vi-cmd-mode
 bindkey '^P' history-search-backward
 bindkey '^N' history-search-forward
 
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey -M vicmd v edit-command-line
+
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

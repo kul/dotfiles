@@ -1,3 +1,5 @@
+set encoding=utf-8
+set fileencoding=utf-8
 set nocompatible
 filetype off
 
@@ -13,16 +15,17 @@ Bundle 'tpope/vim-markdown'
 
 let g:pathogen_disabled = []
 " call add(g:pathogen_disabled, 'vinsime')
+call add(g:pathogen_disabled, 'vim-classpath')
 execute pathogen#infect('pathogen/{}')
 
 syntax on
 filetype plugin indent on
-autocmd FileType scala setl tabstop=2 shiftwidth=2 expandtab softtabstop=2
+autocmd FileType scala,jade setl tabstop=2 shiftwidth=2 expandtab softtabstop=2
 set tabstop=4 shiftwidth=4 expandtab softtabstop=4
 set backspace=indent,eol,start
 set number
 set hidden
-set tags=./tags;../*/tags;/
+set tags=./tags,../**/tags,/
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 set foldmethod=indent
 set foldlevel=99
@@ -44,6 +47,8 @@ set background=dark
 colorscheme solarized
 
 let mapleader=','
+imap <C-Space> <C-x><C-o>
+imap <C-@> <C-Space>
 
 " plugins configurations
 let g:jedi#popup_on_dot=0
