@@ -33,4 +33,13 @@ if [ ! -e ~/.envrc ]; then
     cp .envrc ~/.envrc; 
 fi
 
+# vim powerline setup for Ubuntu
+mkdir -p ~/.fonts
+cd ~/.fonts
+wget https://github.com/Lokaltog/powerline/raw/develop/font/PowerlineSymbols.otf
+fc-cache -vf ~/.fonts
+mkdir -p ~/.fonts.conf.d
+cd ~/.fonts.conf.d
+wget https://github.com/Lokaltog/powerline/raw/develop/font/10-powerline-symbols.conf
+
 echo 'Setup done.'
