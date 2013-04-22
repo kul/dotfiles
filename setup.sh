@@ -33,6 +33,16 @@ if [ ! -e ~/.envrc ]; then
     cp .envrc ~/.envrc; 
 fi
 
+
+# solarized setup for ubuntu
+platform=`uname`
+if [ $platform = 'Linux' ]; then
+    git clone git://github.com/sigurdga/gnome-terminal-colors-solarized.git
+    cd gnome-terminal-colors-solarized
+    ./solarize
+fi
+
+
 # vim powerline setup for Ubuntu
 mkdir -p ~/.fonts
 cd ~/.fonts
