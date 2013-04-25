@@ -18,6 +18,8 @@ Bundle 'Lokaltog/powerline'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-surround'
 Bundle 'ack.vim'
+Bundle 'majutsushi/tagbar'
+Bundle 'terryma/vim-multiple-cursors'
 
 let g:pathogen_disabled = []
 " call add(g:pathogen_disabled, 'vinsime')
@@ -72,7 +74,7 @@ let vimrplugin_tmux = 0
 let g:multi_cursor_use_default_mapping=0
 let g:multi_cursor_next_key="<C-m>"
 let g:multi_cursor_prev_key="<C-b>"
-let g:multi_cursor_skip_key="<C-w>"
+let g:multi_cursor_skip_key="<C-q>"
 let g:multi_cursor_quit_key="<Esc>"
 
 " ctrlp

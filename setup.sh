@@ -19,8 +19,11 @@ git clone git://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/cu
 backup_date=$(date +"%m-%d-%Y_%T")
 
 backup_dotfiles() {
+
+    mkdir -p ~/dotfbkp_$backup_date
+
     while [ $# -ne 0 ]; do
-        cp ~/$1 ~/$1_bkp_$backup_date
+        cp ~/$1 ~/dotfbkp_$backup_date
         rm ~/$1
         ln -s `pwd`/$1 ~/$1 
         shift
@@ -34,12 +37,14 @@ if [ ! -e ~/.envrc ]; then
 fi
 
 
-# solarized setup for ubuntu
+# solarized and dircolors setup for ubuntu
 platform=`uname`
 if [ $platform = 'Linux' ]; then
     git clone git://github.com/sigurdga/gnome-terminal-colors-solarized.git
     cd gnome-terminal-colors-solarized
     ./solarize
+    wget https://raw.github.com/seebi/dircolors-solarized/master/dircolors.256dark
+    mv dircolors.256dark ~/.dir_colors
 fi
 
 
@@ -51,5 +56,10 @@ fc-cache -vf ~/.fonts
 mkdir -p ~/.fonts.conf.d
 cd ~/.fonts.conf.d
 wget https://github.com/Lokaltog/powerline/raw/develop/font/10-powerline-symbols.conf
+
+# liquid prompt
+mkdir -p ~/bin
+cd ~/bin
+wget https://raw.github.com/nojhan/liquidprompt/master/liquidprompt
 
 echo 'Setup done.'
