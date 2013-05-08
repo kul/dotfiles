@@ -20,6 +20,10 @@ Bundle 'tpope/vim-surround'
 Bundle 'ack.vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'terryma/vim-multiple-cursors'
+Bundle 'davidhalter/jedi-vim'
+Bundle 'mattn/zencoding-vim'
+Bundle 'gregsexton/MatchTag'
+Bundle 'kien/rainbow_parentheses.vim'
 
 let g:pathogen_disabled = []
 " call add(g:pathogen_disabled, 'vinsime')
@@ -93,3 +97,7 @@ set laststatus=2
 
 " ack
 noremap <Leader>a :Ack <cword><CR>
+
+" rainbow parantheses
+noremap <Leader>r :RainbowParenthesesToggle<CR>
+set wildignore+=*.class
