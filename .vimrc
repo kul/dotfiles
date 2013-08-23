@@ -2,6 +2,7 @@ set encoding=utf-8
 set fileencoding=utf-8
 set nocompatible
 filetype off
+filetype plugin indent off
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -21,12 +22,17 @@ Bundle 'ack.vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'davidhalter/jedi-vim'
-Bundle 'mattn/zencoding-vim'
+" Bundle 'mattn/emmet-vim'
 Bundle 'gregsexton/MatchTag'
 Bundle 'kien/rainbow_parentheses.vim'
+" Bundle 'leafo/moonscript-vim'
+Bundle 'LaTeX-Box-Team/LaTeX-Box'
+Bundle 'myusuf3/numbers.vim'
+Bundle 'ervandew/screen'
+Bundle 'vim-scripts/Vim-R-plugin'
 
 let g:pathogen_disabled = []
-" call add(g:pathogen_disabled, 'vinsime')
+call add(g:pathogen_disabled, 'vinsime')
 call add(g:pathogen_disabled, 'vim-classpath')
 execute pathogen#infect('pathogen/{}')
 
@@ -37,7 +43,10 @@ set tabstop=4 shiftwidth=4 expandtab softtabstop=4
 set backspace=indent,eol,start
 set number
 set hidden
+set incsearch
 set tags=./tags,../**/tags
+set backupdir=~/.vim/tmp,.
+set directory=~/.vim/tmp,.
 set foldmethod=indent
 set foldlevel=99
 nnoremap <space> za
@@ -62,6 +71,9 @@ set colorcolumn=+1
 let mapleader=','
 imap <C-Space> <C-x><C-o>
 imap <C-@> <C-Space>
+
+" Ignore tags in completion
+set complete-=t
 
 
 " Plugins Configurations
@@ -100,4 +112,22 @@ noremap <Leader>a :Ack <cword><CR>
 
 " rainbow parantheses
 noremap <Leader>r :RainbowParenthesesToggle<CR>
-set wildignore+=*.class
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
+" commandt
+set wildignore+=*.class,*.jar
+
+" latex box
+let g:LatexBox_latexmk_options = "-pdf"
+
+" numbers
+nnoremap <F3> :NumbersToggle<CR>
+
+" r plugin
+let vimrplugin_tmux=1
+let vimrplugin_assign=0
+vmap <Space> <Plug>RDSendSelection
+nmap <Space> <Plug>RDSendLine

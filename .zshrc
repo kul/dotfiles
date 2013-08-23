@@ -48,5 +48,8 @@ autoload -U edit-command-line
 zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
 
+alias jps='jps -l | sort -k2'
+alias rsyncs='rsync -avz --no-perms --no-owner --delete'
+alias l='ls'
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

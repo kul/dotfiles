@@ -30,7 +30,7 @@ backup_dotfiles() {
     done
 }
 
-backup_dotfiles .vimrc .zshrc .screenrc .ctags .minttyrc
+backup_dotfiles .vimrc .zshrc .screenrc .ctags .minttyrc .tmux.conf
 
 if [ ! -e ~/.envrc ]; then
     cp .envrc ~/.envrc; 
