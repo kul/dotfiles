@@ -11,7 +11,6 @@ git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 
 #vim pathogen plugins
 git clone git://github.com/altercation/vim-colors-solarized.git ~/.vim/pathogen/vim-colors-solarized
-git clone https://github.com/kien/ctrlp.vim.git ~/.vim/pathogen/ctrlp.vim
 git clone https://github.com/scrooloose/nerdtree.git ~/.vim/pathogen/nerdtree
 
 #oh my zsh setup
@@ -45,12 +44,11 @@ if [ $platform = 'Linux' ]; then
     cd gnome-terminal-colors-solarized
     ./solarize
     cp solarize ~/bin
-    # wget https://raw.github.com/seebi/dircolors-solarized/master/dircolors.256dark
     cp external/dircolors.256dark ~/.dir_colors
 fi
 
 
-# vim powerline setup for Ubuntu and some nice fonts
+# fonts
 mkdir -p ~/.fonts
 cd ~/.fonts
 cp "$scriptdir/external/Hermit*.otf" .
@@ -61,4 +59,5 @@ mkdir -p ~/bin
 cd ~/bin
 wget https://raw.github.com/nojhan/liquidprompt/master/liquidprompt
 
+vim +BundleInstall +qall
 echo 'Setup done.'

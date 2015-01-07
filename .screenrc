@@ -8,6 +8,8 @@ attrcolor b ".I"    # allow bold colors - necessary for some reason
 termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'   # tell screen how to set colors. AB = background, AF=foreground
 defbce on    # use current bg color for erased chars
 
+bind ^b prev
+
 # bindings: putty
 bindkey "^[[1;5I" next
 bindkey "^[[1;6I" prev
@@ -16,3 +18,5 @@ bindkey "^[[1;6I" prev
 termcapinfo rxvt-unicode ti@:te@
 termcapinfo rxvt ti@:te@
 termcapinfo rxvt 'hs:ts=\E]2;:fs=07:ds=\E]2;screen07'
+
+vbell off

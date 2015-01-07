@@ -2,6 +2,7 @@
 application/msword; ~/.mutt/view_attachment.sh %s "-"
 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet; ~/.mutt/view_attachment.sh %s xlsx
 application/vnd.openxmlformats-officedocument.wordprocessingml.document; ~/.mutt/view_attachment.sh %s docx
+application/vnd.ms-excel; ~/.mutt/view_attachment.sh %s xlsx
 
 # Images
 image/jpg; ~/.mutt/view_attachment.sh %s jpg
@@ -15,6 +16,10 @@ application/pdf; ~/.mutt/view_attachment.sh %s pdf
 
 # HTML
 text/html; ~/.mutt/view_attachment.sh %s html
+text/html; w3m -I %{charset} -T text/html; copiousoutput;
 
 # Unidentified files
 application/octet-stream; ~/.mutt/view_attachment.sh %s "-"
+
+# text/plain
+text/plain; ~/.mutt/view_attachment.sh %s txt

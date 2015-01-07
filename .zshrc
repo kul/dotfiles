@@ -68,16 +68,15 @@ autoload -U edit-command-line
 zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
 
-alias jps='jps -l | sort -k2'
+alias jpl='jps -l | sort -k2'
 alias rsyncs='rsync -avz --no-perms --no-owner --delete'
 alias l='ls'
 alias open='gnome-open'
-alias lc='lein clean'
-alias lcc='lein compile'
-alias lu='lein uberjar'
-alias lr='lein repl'
-alias clj='java -cp /home/kuldeep/.m2/repository/org/clojure/clojure/1.5.1/clojure-1.5.1.jar clojure.main'
+alias lc='leinf clean'
 alias ydl='youtube-dl'
+alias ctags='ctags-exuberant'
+alias luar='rlwrap luajit'
+alias v="vim"
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 GPGKEY=F6F3F6EA
