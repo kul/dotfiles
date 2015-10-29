@@ -43,7 +43,7 @@ source ~/.envrc
 # Gnu screen set tile to running program
 preexec() {
   cmd=${1%% *};
-  if [[ ! ($cmd =~ 'ls|pwd|cd') ]]; then
+  if [[ ! ($cmd =~ 'ls|pwd|cd') && ! (-z "$STY")]]; then
     echo -ne "\ek$cmd\e\\";
   fi
 }
@@ -72,7 +72,7 @@ alias jpl='jps -l | sort -k2'
 alias rsyncs='rsync -avz --no-perms --no-owner --delete'
 alias l='ls'
 alias open='gnome-open'
-alias lc='leinf clean'
+alias lc='lein clean'
 alias ydl='youtube-dl'
 alias ctags='ctags-exuberant'
 alias luar='rlwrap luajit'
