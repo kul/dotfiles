@@ -33,7 +33,7 @@ TERM=xterm-256color
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git command-not-found lein docker zsh-syntax-highlighting)
+plugins=(command-not-found docker git jsontools last-working-dir lein sudo vagrant web-search zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -71,12 +71,13 @@ bindkey -M vicmd v edit-command-line
 alias jpl='jps -l | sort -k2'
 alias rsyncs='rsync -avz --no-perms --no-owner --delete'
 alias l='ls'
-alias open='gnome-open'
 alias lc='lein clean'
-alias ydl='youtube-dl'
 alias ctags='ctags-exuberant'
-alias luar='rlwrap luajit'
 alias v="vim"
+alias open='gnome-open'
+alias ydl='youtube-dl'
+alias luar='rlwrap luajit'
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+# Add RVM to PATH for scripting
+PATH=$PATH:$HOME/.rvm/bin
 GPGKEY=F6F3F6EA

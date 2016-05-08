@@ -15,7 +15,9 @@ Bundle 'derekwyatt/vim-scala'
 Bundle 'tpope/vim-markdown'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'Yggdroot/indentLine'
-Bundle 'bling/vim-airline'
+"Bundle 'bling/vim-airline'
+Bundle 'vim-airline/vim-airline'
+Bundle 'vim-airline/vim-airline-themes'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-repeat'
@@ -227,3 +229,6 @@ nnoremap \ :Ag<SPACE>
 
 " Google
 nnoremap <Leader>go :Google "<C-R><C-W>"<CR>
+
+" Airline
+let g:airline#extensions#tabline#enabled = 1
