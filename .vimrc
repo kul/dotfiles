@@ -7,67 +7,52 @@ filetype plugin indent off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-Bundle 'gmarik/vundle'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-ragtag'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'derekwyatt/vim-scala'
-Bundle 'tpope/vim-markdown'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'Yggdroot/indentLine'
-"Bundle 'bling/vim-airline'
-Bundle 'vim-airline/vim-airline'
-Bundle 'vim-airline/vim-airline-themes'
-Bundle 'tpope/vim-commentary'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-repeat'
-Bundle 'kien/ctrlp.vim'
-Bundle 'majutsushi/tagbar'
-Bundle 'godlygeek/tabular'
-" Bundle 'terryma/vim-multiple-cursors'
-Bundle 'davidhalter/jedi-vim'
-Bundle 'nvie/vim-flake8'
-" Bundle 'mattn/emmet-vim'
-Bundle 'gregsexton/MatchTag'
-Bundle 'kien/rainbow_parentheses.vim'
-" Bundle 'amdt/vim-niji'
-" Bundle 'leafo/moonscript-vim'
-" Bundle 'LaTeX-Box-Team/LaTeX-Box'
-Bundle 'LaTeX-Box'
-Bundle 'myusuf3/numbers.vim'
-Bundle 'ervandew/screen'
-" Bundle 'vim-scripts/Vim-R-plugin'
-Bundle 'jcfaria/Vim-R-plugin'
-Bundle 'scrooloose/nerdtree'
-" Bundle 'uguu-org/vim-matrix-screensaver'
-" Bundle 'wannesm/wmgraphviz.vim'
-" Bundle 'jpalardy/vim-slime'
-Bundle 'Raimondi/delimitMate'
-Bundle 'itchyny/calendar.vim'
-" Bundle 'hylang/vim-hy'
-Bundle 'szw/vim-g'
+Plugin 'gmarik/vundle'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-ragtag'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'derekwyatt/vim-scala'
+Plugin 'tpope/vim-markdown'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'Yggdroot/indentLine'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
+Plugin 'kien/ctrlp.vim'
+Plugin 'majutsushi/tagbar'
+Plugin 'godlygeek/tabular'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'nvie/vim-flake8'
+Plugin 'gregsexton/MatchTag'
+Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'LaTeX-Box'
+Plugin 'myusuf3/numbers.vim'
+Plugin 'ervandew/screen'
+Plugin 'jcfaria/Vim-R-plugin'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'Raimondi/delimitMate'
+Plugin 'itchyny/calendar.vim'
+Plugin 'szw/vim-g'
 Bundle 'kshenoy/vim-signature'
 
 " Clojure
-Bundle 'tpope/vim-fireplace'
-" Bundle 'tpope/vim-classpath'
-Bundle 'guns/vim-clojure-static'
-Bundle 'gcmt/wildfire.vim'
-Bundle 'tpope/timl'
-" Bundle 'guns/vim-clojure-highlight'
-" Bundle 'guns/vim-slamhound'
-" Bundle 'dgrnbrg/vim-redl'
+Plugin 'tpope/vim-fireplace'
+Plugin 'guns/vim-clojure-static'
+Plugin 'gcmt/wildfire.vim'
+Plugin 'tpope/timl'
 
 " Lua
-Bundle 'xolox/vim-misc'
-Bundle 'xolox/vim-lua-ftplugin'
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-lua-ftplugin'
 
 " color scheme
-Bundle 'flazz/vim-colorschemes'
+Plugin 'flazz/vim-colorschemes'
 
 let g:pathogen_disabled = []
-call add(g:pathogen_disabled, 'vinsime')
-call add(g:pathogen_disabled, 'vim-classpath')
+" call add(g:pathogen_disabled, 'vim-classpath')
 execute pathogen#infect('pathogen/{}')
 
 syntax on
@@ -152,6 +137,7 @@ let g:indentLine_char = '│'
 " powerline
 set laststatus=2
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
 
 " rainbow parantheses
 nnoremap <Leader>r :RainbowParenthesesToggle<CR>
@@ -229,6 +215,3 @@ nnoremap \ :Ag<SPACE>
 
 " Google
 nnoremap <Leader>go :Google "<C-R><C-W>"<CR>
-
-" Airline
-let g:airline#extensions#tabline#enabled = 1

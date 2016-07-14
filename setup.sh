@@ -50,8 +50,6 @@ if [ $platform = 'Linux' ]; then
     git clone https://github.com/Anthony25/gnome-terminal-colors-solarized.git
     cd gnome-terminal-colors-solarized
     ./set_dark.sh
-    cd ..
-    cp external/dircolors.256dark ~/.dir_colors
 fi
 
 # fonts
@@ -66,5 +64,6 @@ cd ~/bin
 wget https://raw.github.com/nojhan/liquidprompt/master/liquidprompt
 cd ..
 
+mkdir -p ~/.vim/tmp
 vim +BundleInstall +qall
 echo 'Setup done.'

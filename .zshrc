@@ -71,12 +71,8 @@ bindkey -M vicmd v edit-command-line
 alias jpl='jps -l | sort -k2'
 alias rsyncs='rsync -avz --no-perms --no-owner --delete'
 alias l='ls'
-alias lc='lein clean'
-alias ctags='ctags-exuberant'
 alias v="vim"
 alias open='gnome-open'
-alias ydl='youtube-dl'
-alias luar='rlwrap luajit'
 
 # Add RVM to PATH for scripting
 PATH=$PATH:$HOME/.rvm/bin
