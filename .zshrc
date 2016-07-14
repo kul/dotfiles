@@ -73,9 +73,6 @@ alias rsyncs='rsync -avz --no-perms --no-owner --delete'
 alias l='ls'
 alias open='gnome-open'
 alias lc='lein clean'
-alias ydl='youtube-dl'
-alias ctags='ctags-exuberant'
-alias luar='rlwrap luajit'
 alias v="vim"
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

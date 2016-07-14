@@ -4,7 +4,7 @@ scriptdir=$(pwd)
 
 #pathogen setup
 mkdir -p ~/.vim/pathogen ~/.vim/autoload ~/.vim/bundle
-curl -Sso ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
 #vundle setup
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
@@ -40,7 +40,8 @@ fi
 # solarized and dircolors setup for ubuntu
 platform=`uname`
 if [ $platform = 'Linux' ]; then
-    git clone git://github.com/sigurdga/gnome-terminal-colors-solarized.git
+    sudo apt-get install dconf-cli
+    git clone git://github.com/Anthony25/gnome-terminal-colors-solarized
     cd gnome-terminal-colors-solarized
     ./solarize
     cp solarize ~/bin
@@ -59,5 +60,6 @@ mkdir -p ~/bin
 cd ~/bin
 wget https://raw.github.com/nojhan/liquidprompt/master/liquidprompt
 
+mkdir -p ~/.vim/tmp
 vim +BundleInstall +qall
 echo 'Setup done.'
