@@ -1,4 +1,5 @@
 #!/bin/sh
+# DEPRECATED
 
 # colorscheme setup
 # git clone https://github.com/altercation/mutt-colors-solarized

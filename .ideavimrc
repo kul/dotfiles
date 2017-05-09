@@ -1,0 +1,11 @@
+source ~/.vimrc
+set surround
+nnoremap <C-n> :action NextTab<CR>
+nnoremap <C-b> :action PreviousTab<CR>
+nnoremap <C-x> :action CloseContent<CR>
+nnoremap <C-p> :action GotoFile<CR>
+nnoremap <C-f> :action FindInPath<CR>
+nnoremap <C-q> :action QuickJavaDoc<CR>
+
+inoremap <C-P> <C-O>:action HippieBackwardCompletion<CR>
+inoremap <C-N> <C-O>:action HippieCompletion<CR>

@@ -1,62 +1,58 @@
-set encoding=utf-8
-set fileencoding=utf-8
 set nocompatible
 filetype off
-filetype plugin indent off
 
 set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+call vundle#begin()
 
-Plugin 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'dracula/vim'
+Plugin 'tpope/vim-commentary'
+Plugin 'scrooloose/nerdtree'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-ragtag'
-Plugin 'Lokaltog/vim-easymotion'
-Plugin 'derekwyatt/vim-scala'
+" Plugin 'Lokaltog/vim-easymotion'
 Plugin 'tpope/vim-markdown'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'Yggdroot/indentLine'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'kien/ctrlp.vim'
-Plugin 'majutsushi/tagbar'
-Plugin 'godlygeek/tabular'
-Plugin 'davidhalter/jedi-vim'
-Plugin 'nvie/vim-flake8'
-Plugin 'gregsexton/MatchTag'
+" Plugin 'godlygeek/tabular'
+" Plugin 'davidhalter/jedi-vim'
+" Plugin 'nvie/vim-flake8'
+" Plugin 'gregsexton/MatchTag'
 Plugin 'kien/rainbow_parentheses.vim'
-Plugin 'LaTeX-Box'
+" Plugin 'LaTeX-Box'
 Plugin 'myusuf3/numbers.vim'
-Plugin 'ervandew/screen'
-Plugin 'jcfaria/Vim-R-plugin'
-Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'Raimondi/delimitMate'
-Plugin 'itchyny/calendar.vim'
-Plugin 'szw/vim-g'
-Bundle 'kshenoy/vim-signature'
+" Plugin 'Raimondi/delimitMate'
+" Plugin 'itchyny/calendar.vim'
+" Plugin 'szw/vim-g'
+" Plugin 'kshenoy/vim-signature'
+
+" " golang
+" Plugin 'fatih/vim-go'
 
 " Clojure
 Plugin 'tpope/vim-fireplace'
+Plugin 'tpope/vim-salve'
+Plugin 'tpope/vim-dispatch'
 Plugin 'guns/vim-clojure-static'
+Plugin 'guns/vim-clojure-highlight'
 Plugin 'gcmt/wildfire.vim'
 Plugin 'tpope/timl'
 
-" Lua
-Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-lua-ftplugin'
+call vundle#end()
 
-" color scheme
-Plugin 'flazz/vim-colorschemes'
+" let g:pathogen_disabled = []
+" execute pathogen#infect('pathogen/{}')
 
-let g:pathogen_disabled = []
-" call add(g:pathogen_disabled, 'vim-classpath')
-execute pathogen#infect('pathogen/{}')
-
-syntax on
 filetype plugin indent on
+set encoding=utf-8
+set fileencoding=utf-8
+syntax on
 set smartindent
 set expandtab
 autocmd FileType python setl tabstop=4 shiftwidth=4 softtabstop=4
@@ -70,7 +66,7 @@ set tags=./tags,../**/tags
 set backupdir=~/.vim/tmp,.
 set directory=~/.vim/tmp,.
 set foldmethod=marker
-set foldcolumn=3
+" set foldcolumn=3
 set foldlevel=99
 nnoremap <space> za
 vnoremap <space> zf
@@ -81,14 +77,17 @@ nnoremap <F2> :set nonumber!<CR>
 nnoremap ; :
 inoremap kj <esc>
 cnoremap kj <c-c>
+nnoremap <C-j> 3j3<C-e>
+nnoremap <C-k> 3k3<C-y>
 nnoremap <C-n> :bn<CR>
 nnoremap <C-b> :bp<CR>
 nnoremap <C-x> :bd<CR>
 cmap w!! w !sudo tee % >/dev/null
 
 " set t_Co=256
-set background=dark
-colorscheme solarized
+" set background=dark
+" colorscheme solarized
+color dracula
 highlight SignColumn ctermbg=8
 set list
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮,trail:.
@@ -113,14 +112,8 @@ let g:tagbar_ctags_bin='/usr/bin/ctags-exuberant'
 " Plugins Configurations
 
 " Nerdtree
-nnoremap <Leader>f :NERDTreeToggle<CR>
+nnoremap <Leader>f :NERDTreeFind<CR>
 nnoremap <C-f> :NERDTreeToggle<CR>
-
-" vim r plugin
-autocmd FileType r vmap <Space> <Plug>RDSendSelection
-autocmd FileType r nmap <Space> <Plug>RDSendLine
-let vimrplugin_notmuxconf = 1
-let vimrplugin_tmux = 0
 
 " vim-multiple-cursors
 let g:multi_cursor_use_default_mapping=0
@@ -134,7 +127,7 @@ let g:indentLine_color_term = 239
 let g:indentLine_color_gui = '#09AA08'
 let g:indentLine_char = '│'
 
-" powerline
+" airline
 set laststatus=2
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
@@ -156,17 +149,6 @@ let g:tex_comment_nospell=1
 " numbers
 nnoremap <F3> :NumbersToggle<CR>
 
-" screen plugin
-let g:ScreenImpl='GnuScreen'
-nnoremap <Leader>im V:ScreenSend<CR>j<C-e>
-vmap <Leader>m :ScreenSend<CR>
-
-" r plugin
-let vimrplugin_tmux=1
-let vimrplugin_assign=0
-au FileType R vmap <Space> <Plug>RDSendSelection
-au FileType R nmap <Space> <Plug>RDSendLine
-
 " git
 nnoremap ,gd :Gdiff<CR>
 nnoremap ,gs :Gstatus<CR>
@@ -185,19 +167,20 @@ augroup filetype_clojure
     autocmd FileType clojure setlocal conceallevel=2
 augroup END
 
-" pandoc , markdown
+" pandoc , markdown {{{
 command! -nargs=* RunSilent
       \ | execute ':silent !'.'<args>'
       \ | execute ':redraw!'
 nmap <Leader>pc :RunSilent pandoc -o /tmp/vim-pandoc-out.html %<CR>
 nmap <Leader>pp :RunSilent gnome-open /tmp/vim-pandoc-out.html<CR>
+" }}}
 
 " lua
 let g:lua_compiler_name='luajit'
 let g:lua_compiler_args='-b -l'
 let g:lua_error_format='luajit: %f:%l: %m'
 
-" The Silver Searcher
+" The Silver Searcher {{{
 if executable('ag')
   " Use ag over grep
   set grepprg=ag\ --nogroup\ --nocolor
@@ -208,6 +191,7 @@ if executable('ag')
   " ag is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
 endif
+" }}}
 
 nnoremap <Leader>a :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!

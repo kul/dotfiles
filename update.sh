@@ -1,4 +1,5 @@
 #!/bin/sh
+# DEPRECATED
 
 # stash changes 
 git stash

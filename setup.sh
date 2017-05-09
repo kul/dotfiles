@@ -15,14 +15,9 @@ curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 # vundle setup
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/vundle
 
-# vim pathogen plugins
-git clone git://github.com/altercation/vim-colors-solarized.git ~/.vim/pathogen/vim-colors-solarized
-git clone https://github.com/scrooloose/nerdtree.git ~/.vim/pathogen/nerdtree
-
-# oh my zsh setup
+# zsh setup
 sudo apt-get install zsh
-git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
-git clone git://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+git clone git://github.com/zsh-users/antigen.git
 sudo chsh -s /bin/zsh
 
 backup_date=$(date +"%m-%d-%Y_%T")
@@ -38,7 +33,7 @@ backup_dotfiles() {
     done
 }
 
-backup_dotfiles .vimrc .zshrc .screenrc .ctags .minttyrc .tmux.conf
+backup_dotfiles .vimrc .zshrc .screenrc .ctags .minttyrc .tmux.conf .ideavimrc
 
 if [ ! -e ~/.envrc ]; then
     cp .envrc ~/.envrc;
@@ -47,9 +42,9 @@ fi
 # solarized and dircolors setup for ubuntu
 platform=`uname`
 if [ $platform = 'Linux' ]; then
-    git clone https://github.com/Anthony25/gnome-terminal-colors-solarized.git
-    cd gnome-terminal-colors-solarized
-    ./set_dark.sh
+    git clone https://github.com/dracula/gnome-terminal dracula-gnome-terminal
+    cd dracula-gnome-terminal
+    ./install.sh
 fi
 
 # fonts
@@ -65,5 +60,5 @@ wget https://raw.github.com/nojhan/liquidprompt/master/liquidprompt
 cd ..
 
 mkdir -p ~/.vim/tmp
-vim +BundleInstall +qall
+vim +PluginInstall +qall
 echo 'Setup done.'
